@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Loader from "../components/Loading";
 
 export const AuthContext = createContext();
 
@@ -69,7 +70,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><Loader/></div>;
   }
 
   return (
